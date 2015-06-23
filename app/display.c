@@ -972,7 +972,7 @@ void ddisplay_scroll_up(DDisplay *ddisp)
   Point delta;
 
   delta.x = 0;
-  delta.y = -(ddisp->visible.bottom - ddisp->visible.top)/4.0;
+  delta.y = -(ddisp->visible.bottom - ddisp->visible.top) * 0.01 * prefs.scroll_step_percentage;
   
   ddisplay_scroll(ddisp, &delta);
 }
@@ -982,7 +982,7 @@ void ddisplay_scroll_down(DDisplay *ddisp)
   Point delta;
 
   delta.x = 0;
-  delta.y = (ddisp->visible.bottom - ddisp->visible.top)/4.0;
+  delta.y = (ddisp->visible.bottom - ddisp->visible.top) * 0.01 * prefs.scroll_step_percentage;
   
   ddisplay_scroll(ddisp, &delta);
 }
@@ -991,7 +991,7 @@ void ddisplay_scroll_left(DDisplay *ddisp)
 {
   Point delta;
 
-  delta.x = -(ddisp->visible.right - ddisp->visible.left)/4.0;
+  delta.x = -(ddisp->visible.right - ddisp->visible.left) * 0.01 * prefs.scroll_step_percentage;
   delta.y = 0;
   
   ddisplay_scroll(ddisp, &delta);
@@ -1001,7 +1001,7 @@ void ddisplay_scroll_right(DDisplay *ddisp)
 {
   Point delta;
 
-  delta.x = (ddisp->visible.right - ddisp->visible.left)/4.0;
+  delta.x = (ddisp->visible.right - ddisp->visible.left) * 0.01 * prefs.scroll_step_percentage;
   delta.y = 0;
   
   ddisplay_scroll(ddisp, &delta);

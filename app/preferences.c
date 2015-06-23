@@ -91,6 +91,7 @@ static int default_int_w = 500;
 static int default_int_h = 400;
 static int default_undo_depth = 15;
 static guint default_recent_documents = 5;
+static real default_scroll_step_percentage = 25.0;
 static Color default_colour = DEFAULT_GRID_COLOR;
 static Color pbreak_colour = DEFAULT_PAGEBREAK_COLOR;
 static const gchar *default_paper_name = NULL;
@@ -184,6 +185,9 @@ DiaPrefData prefs_data[] =
   { "fontsize_unit", PREF_CHOICE, PREF_OFFSET(fontsize_unit),
     &default_fontsize_unit, UI_TAB, N_("Font size unit:"), NULL, FALSE,
     _get_units_name_list, update_internal_prefs },
+
+  { "scroll_step_percentage", PREF_UREAL, PREF_OFFSET(scroll_step_percentage),
+    &default_scroll_step_percentage, 0, N_("Scroll step percentage of view dimension:") },
   
   { NULL, PREF_NONE, 0, NULL, DIA_TAB, N_("New diagram:") },
   { "is_portrait", PREF_BOOLEAN, PREF_OFFSET(new_diagram.is_portrait), &default_true, DIA_TAB, N_("Portrait") },

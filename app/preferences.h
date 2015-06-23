@@ -58,6 +58,8 @@ struct DiaPreferences {
 
   gchar* length_unit;
   gchar* fontsize_unit;
+
+  real scroll_step_percentage;
   
   struct {
     int visible;
